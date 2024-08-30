@@ -1,7 +1,10 @@
 import asyncio
 import telegram
+from datetime import datetime
 
 BOT_TOKEN = '7232080323:AAH7iYuS7qjc2_JakiOu588ANM6_49FLUTM'
+current_time = datetime.today().strftime("%Y-%m-%d %H:%M:%S")
+
 
 class telegramBot():
     def __init__(self):
@@ -18,7 +21,7 @@ class telegramBot():
 
 
     async def main(self, message):
-        await self.bot.send_message(text=f'너는 아주 잘하고 있어! 최고야!!', chat_id=self.chat_id)
+        await self.bot.send_message(text=f'{current_time}에도 너는 아주 잘하고 있어! 최고야!!', chat_id=self.chat_id)
         print('message send!')
 
 if __name__ == '__main__':
