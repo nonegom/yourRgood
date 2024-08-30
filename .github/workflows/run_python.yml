@@ -23,10 +23,6 @@ jobs:
               python -m pip install --upgrade pip
               pip install -r requirements.txt
 
-        - name: Run my_script.py
-          run: |
-              python my_script.py
-
         - name: Run telegram_bot.py
           run: |
               python telegram_bot.py
