@@ -2,6 +2,8 @@ import asyncio
 import telegram
 from datetime import datetime
 import os 
+from dotenv import load_dotenv
+load_dotenv(verbose=True)
 
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 current_time = datetime.today().strftime("%Y-%m-%d %H:%M:%S")

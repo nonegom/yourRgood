@@ -22,7 +22,9 @@ jobs:
               pip install -r requirements.txt
 
         - name: Set environment variable
-          run: echo "BOT_TOKEN=${{secrets.BOT_TOKEN}}" >> $GITHUB_ENV
+          run: echo "BOT_TOKEN=$BOT_TOKEN" >> .env
+          env: 
+            BOT_TOKEN: ${{secrets.BOT_TOKEN}}
 
         - name: Run telegram_bot.py
           run: |
