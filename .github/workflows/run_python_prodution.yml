@@ -22,7 +22,7 @@ jobs:
               pip install -r requirements.txt
 
         - name: Set environment variable
-          run: echo "BOT_TOKEN=${{secrets.BOT_TOKEN}}">> .env
+          run: echo "BOT_TOKEN=7144285324:AAGXDPJxX7ulPF2V5PLVBQfHvsobHnjZ1DY">> .env
 
         - name: Run telegram_bot.py
           run: |
