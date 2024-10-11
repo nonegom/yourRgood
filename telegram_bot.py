@@ -1,4 +1,6 @@
 import asyncio
+import json
+
 import telegram
 from datetime import datetime
 import os 
@@ -13,6 +15,11 @@ class telegramBot():
     def __init__(self):
         self.bot = telegram.Bot(token=BOT_TOKEN)
         self.chat_id = asyncio.run(self.load_chat_id())
+
+    def load_good_word_list(self):
+        with open('good_word_list.json', 'r', encoding='utf-8') as file:
+            word_list = json.load(file)
+        return word_list
 
     async def checkbot(self):
         print(await self.bot.get_me())
