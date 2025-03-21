@@ -19,7 +19,7 @@ jobs:
           PR_URL: ${{ github.event.pull_request.html_url }}
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
         run: |
-          MESSAGE="📢 새로운 PR 등록!\n\n제목: $PR_TITLE\n작성자: $PR_AUTHOR\n링크: $PR_URL"
+          MESSAGE="📢 새로운 PR 등록!%0A%0A제목: $PR_TITLE%0A작성자: $PR_AUTHOR%0A링크: $PR_URL"
           curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
           -d chat_id="$TELEGRAM_CHAT_ID" \
           -d text="$MESSAGE"
@@ -34,7 +34,7 @@ jobs:
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
           REVIEWER: ${{ github.event.review.user.login }}
         run: |
-          MESSAGE="✅ PR이 승인되었습니다!\n\n제목: $PR_TITLE\n작성자: $PR_AUTHOR\n리뷰어: $REVIEWER\n링크: $PR_URL"
+          MESSAGE="✅ PR이 승인되었습니다!%0A%0A제목: $PR_TITLE%0A작성자: $PR_AUTHOR%0A리뷰어: $REVIEWER%0A링크: $PR_URL"
           curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
           -d chat_id="$TELEGRAM_CHAT_ID" \
           -d text="$MESSAGE"
