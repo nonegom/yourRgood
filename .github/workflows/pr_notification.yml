@@ -23,7 +23,7 @@ jobs:
           -d text="$MESSAGE"
 
       - name: Send Telegram Message on PR Approved
-        if: github.event_name == 'pull_request' && ithub.event.pull_request.merged
+        if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
